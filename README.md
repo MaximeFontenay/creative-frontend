@@ -2,6 +2,4 @@
 
 ## Warhol
 
-[Site inspiration](https://warhol-arts.webflow.io/)
-
-
+<a href="https://warhol-arts.webflow.io/" target="_blank">Site inspiration</a>
