@@ -1,0 +1,54 @@
+@font-face {
+  font-family: Mango;
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../fonts/MangoGrotesque-ExtraLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Mango;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/MangoGrotesque-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Mango;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/MangoGrotesque-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Mango;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/MangoGrotesque-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Mango;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/MangoGrotesque-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Mango;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/MangoGrotesque-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: Mango;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/MangoGrotesque-Black.woff2") format("woff2");
+}

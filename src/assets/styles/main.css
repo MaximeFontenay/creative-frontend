@@ -1,0 +1,11 @@
+@import "./fonts.css";
+@import "tailwindcss";
+
+@theme {
+  --font-mango: "Mango", "ui-sans-serif", "system-ui", "sans-serif";
+
+  --color-*: initial;
+  --color-primary: oklch(66.38% 0.2148 33.2);
+  --color-dark: oklch(9.69% 0 0);
+  --color-light: oklch(93.88% 0.0357 53.72);
+}
