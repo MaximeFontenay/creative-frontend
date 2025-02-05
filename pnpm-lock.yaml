@@ -11,6 +11,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.1
         version: 4.0.1(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1))
+      lenis:
+        specifier: ^1.1.20
+        version: 1.1.20(vue@3.5.13(typescript@5.6.3))
       tailwindcss:
         specifier: ^4.0.1
         version: 4.0.1
@@ -500,6 +503,17 @@ packages:
   jiti@2.4.2:
     resolution: {integrity: sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==}
     hasBin: true
+
+  lenis@1.1.20:
+    resolution: {integrity: sha512-UE64mlJEN4W8DWP2tfHzPzygk94Q2BhjzeG/YHWoyeMJ2Fd6XziBCNN+IvHwmB4GkmKIYxgr0+TvRYTSAMTMFA==}
+    peerDependencies:
+      react: '>=17.0.0'
+      vue: '>=3.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      vue:
+        optional: true
 
   lightningcss-darwin-arm64@1.29.1:
     resolution: {integrity: sha512-HtR5XJ5A0lvCqYAoSv2QdZZyoHNttBpa5EP9aNuzBQeKGfbyH5+UipLWvVzpP4Uml5ej4BYs5I9Lco9u1fECqw==}
@@ -1033,6 +1047,10 @@ snapshots:
   he@1.2.0: {}
 
   jiti@2.4.2: {}
+
+  lenis@1.1.20(vue@3.5.13(typescript@5.6.3)):
+    optionalDependencies:
+      vue: 3.5.13(typescript@5.6.3)
 
   lightningcss-darwin-arm64@1.29.1:
     optional: true

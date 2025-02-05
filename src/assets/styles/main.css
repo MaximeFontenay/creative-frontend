@@ -2,10 +2,196 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-xl: 1380px;
+
   --font-mango: "Mango", "ui-sans-serif", "system-ui", "sans-serif";
+
+  --text-mini: max(0.25vw, 1px);
+  --text-mini--line-height: 1;
+  --text-2xs: max(1.15vw, 5px);
+  --text-2xs--line-height: 1;
+  --text-xs: max(1.5vw, 7px);
+  --text-xs--line-height: 1;
+  --text-sm: max(2.75vw, 12px);
+  --text-sm--line-height: 1;
+  --text-base: max(4vw, 10px);
+  --text-base--line-height: 1;
+  --text-lg: max(4.15vw, 20px);
+  --text-lg--line-height: 1;
+  --text-xl: max(13vw, 26px);
+  --text-xl--line-height: 1;
+  --text-2xl: max(18vw, 30px);
+  --text-2xl--line-height: 1;
 
   --color-*: initial;
   --color-primary: oklch(66.38% 0.2148 33.2);
+  --color-beige: oklch(69.05% 0.0248 56.79);
+  --color-beige-200: oklch(31.34% 0.009 53.16);
   --color-dark: oklch(9.69% 0 0);
   --color-light: oklch(93.88% 0.0357 53.72);
+}
+
+/* Globals */
+:where(img) {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+html {
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-box-edge: cap alphabetic;
+  text-box-trim: both;
+}
+
+#app {
+  overflow-x: clip;
+}
+
+/* Utils */
+.vertical-center {
+  @apply top-1/2 -translate-y-1/2;
+}
+
+.container {
+  @apply w-[75vw] mx-auto;
+}
+
+/* Lenis scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Section I */
+h1 {
+  .warhol--letter {
+    -webkit-text-fill-color: var(--color-light);
+    -webkit-background-clip: text;
+    background-position: 10px;
+    background-size: cover;
+    will-change: transform;
+    transition: none;
+
+    &:hover {
+      -webkit-text-fill-color: transparent;
+      background-position: 0px;
+      transition: background 3s ease-out;
+    }
+
+    &.warhol--letter__1 {
+      background-image: url("../images/mask_letter_w.avif");
+    }
+    &.warhol--letter__2 {
+      background-image: url("../images/mask_letter_a.avif");
+    }
+    &.warhol--letter__3 {
+      background-image: url("../images/mask_letter_r.avif");
+    }
+    &.warhol--letter__4 {
+      background-image: url("../images/mask_letter_h.avif");
+    }
+    &.warhol--letter__5 {
+      background-image: url("../images/mask_letter_o.avif");
+    }
+    &.warhol--letter__6 {
+      background-image: url("../images/mask_letter_l.avif");
+    }
+  }
+}
+
+.exhibition-text {
+  /* font-size: clamp(10px, 2vw, 50px);
+  line-height: 1.1;
+
+  .small-text {
+    font-size: clamp(5px, 0.75vw, 20px);
+  } */
+}
+
+.glue p {
+  letter-spacing: 0.5px;
+  -webkit-text-stroke: clamp(0.05px, 0.1vw, 2px) var(--color-dark);
+}
+
+/* Section II */
+@keyframes banana {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(-1);
+  }
+}
+
+.banana {
+  will-change: transform;
+  animation: alternate infinite 2s linear banana;
+}
+
+@keyframes can {
+  0% {
+    transform: rotate(-8deg);
+  }
+  10% {
+    transform: rotate(30deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  30% {
+    transform: rotate(-8deg);
+  }
+  34% {
+    transform: rotate(30deg);
+  }
+  37% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(30deg);
+  }
+  43% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(-8deg);
+  }
+}
+
+.can {
+  will-change: transform;
+  animation: infinite 3s linear can;
 }
