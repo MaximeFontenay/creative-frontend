@@ -1,7 +1,13 @@
 {
-  "files": [],
+  "files": [
+    "node_modules/gsap/types/index.d.ts"
+  ],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
   ]
 }
