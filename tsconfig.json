@@ -8,6 +8,12 @@
       "DOM.Iterable",
       "ESNext"
     ],
+    "baseUrl": ".",
+    "paths": {
+      "img/*": [
+        "src/assets/images/*"
+      ]
+    },
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
