@@ -21,6 +21,7 @@ const raf = (time: number) => {
 requestAnimationFrame(raf);
 
 
+
 // DOM 
 const app = ref<HTMLElement | null>(null);
 
@@ -101,7 +102,7 @@ onMounted(() => {
 
   ScrollTrigger.create({
     trigger: monroes.value,
-    onUpdate: ({ progress }) => {
+    onUpdate: ({ progress }: { progress: number }): void => {
       backgroundHandler(progress);
       slideTextHandler(progress, vividColor.value as HTMLElement, true);
       slideTextHandler(progress, iconReborn.value as HTMLElement, false);
@@ -310,8 +311,7 @@ onMounted(() => {
     <section class="mb-[10vw] relative">
       <div class="container">
         <img ref="vividColor" src="./assets/images/Vivid-Colors.svg"
-          class="uppercase text-xl font-medium relative z-50 text-dark mix-blend-difference" draggable="false"
-          decoding="async" />
+          class="relative z-50 mix-blend-difference pointer-events-none" draggable="false" decoding="async" />
         <div ref="monroes" class="monroes aspect-square relative w-[48vw] mt-[-8vh] mb-[-7vh] mx-auto max-lg:w-[80vw]">
           <img src="./assets/images/m-0.avif" alt="monroe" draggable="false" decoding="async">
           <img src="./assets/images/m-1.avif" alt="monroe" draggable="false" decoding="async">
@@ -325,8 +325,7 @@ onMounted(() => {
           <img src="./assets/images/m-9.avif" alt="monroe" draggable="false" decoding="async">
         </div>
         <img ref="iconReborn" src="./assets/images/ICON-REBORN.svg"
-          class="uppercase text-xl font-medium relative z-50 text-dark mix-blend-difference ml-auto" draggable="false"
-          decoding="async" />
+          class="relative z-50 mix-blend-difference pointer-events-none ml-auto" draggable="false" decoding="async" />
       </div>
     </section>
 
