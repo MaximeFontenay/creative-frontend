@@ -1,9 +1,0 @@
-{
-  "extends": ["stylelint-config-standard", "stylelint-config-tailwindcss"],
-  "rules": {
-    "custom-property-pattern": null,
-    "selector-class-pattern": null,
-    "no-descending-specificity": null,
-    "at-rule-no-deprecated": null
-  }
-}

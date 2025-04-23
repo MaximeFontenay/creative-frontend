@@ -1,20 +1,19 @@
 <script lang="ts" setup>
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { onMounted, ref } from 'vue';
 
-const app = ref<HTMLElement | null>(null);
 const monroes = ref<HTMLElement | null>(null);
 const vividColor = ref<HTMLElement | null>(null);
 const iconReborn = ref<HTMLElement | null>(null);
 
-
-const backgroundHandler = (progress: number): void => {
-  if (!app.value) return
+const backgroundHandler = (appElement: HTMLElement, progress: number): void => {
+  if (!appElement) return
 
   const backgroundColor = (progress >= 0.3 && progress <= 0.7)
     ? 'var(--color-light)'
     : 'var(--color-dark)'
 
-  app.value.style.backgroundColor = backgroundColor
+  appElement.style.backgroundColor = backgroundColor
 }
 
 const slideTextHandler = (progress: number, text: HTMLElement, direction: boolean): void => {
@@ -40,12 +39,14 @@ const updateImageStyles = (images: NodeListOf<HTMLImageElement>, activeIndex: nu
 };
 
 onMounted(() => {
-  if (!monroes.value || !app.value) return
+  const app = document.querySelector('#appInner') as HTMLElement;
+
+  if (!monroes.value || !app) return
 
   ScrollTrigger.create({
     trigger: monroes.value,
     onUpdate: ({ progress }: { progress: number }): void => {
-      backgroundHandler(progress);
+      backgroundHandler(app, progress);
       slideTextHandler(progress, vividColor.value as HTMLElement, true);
       slideTextHandler(progress, iconReborn.value as HTMLElement, false);
     },

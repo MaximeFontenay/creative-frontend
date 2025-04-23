@@ -3,10 +3,8 @@
 
 @theme {
   --breakpoint-xl: 1380px;
-
   --font-mango: "Mango", "ui-sans-serif", "system-ui", "sans-serif";
   --font-league: "League", "serif", "system-ui", "sans-serif";
-
   --text-mini: max(0.4vw, 1.3px);
   --text-mini--line-height: 1;
   --text-3xs: max(1vw, 4px);
@@ -25,18 +23,18 @@
   --text-xl--line-height: 1;
   --text-2xl: max(18vw, 30px);
   --text-2xl--line-height: 1;
-
   --color-*: initial;
-  --color-primary: oklch(66.38% 0.2148 33.2);
-  --color-beige: oklch(69.05% 0.0248 56.79);
-  --color-beige-200: oklch(31.34% 0.009 53.16);
-  --color-dark: oklch(9.69% 0 0);
-  --color-light: oklch(93.88% 0.0357 53.72);
+  --color-primary: oklch(66.38% 0.2148 33.2deg);
+  --color-beige: oklch(69.05% 0.0248 56.79deg);
+  --color-beige-200: oklch(31.34% 0.009 53.16deg);
+  --color-dark: oklch(9.69% 0 0deg);
+  --color-light: oklch(93.88% 0.0357 53.72deg);
 }
 
 @utility scrollbar-hide {
   scrollbar-width: none;
   -ms-overflow-style: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -63,10 +61,9 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   text-box-edge: cap alphabetic;
+  /* stylelint-disable-next-line declaration-property-value-no-unknown */
   text-box-trim: both;
 }
 
@@ -105,7 +102,6 @@ html.lenis body {
 h1 {
   .warhol--letter {
     -webkit-text-fill-color: var(--color-light);
-    -webkit-background-clip: text;
     background-clip: text;
     background-position: 10px;
     background-size: cover;
@@ -114,27 +110,32 @@ h1 {
 
     &:hover {
       -webkit-text-fill-color: transparent;
-      background-position: 0px;
+      background-position: 0;
       transition: background 3s ease-out;
     }
 
     &.warhol--letter__1 {
-      background-image: url("../images/mask_letter_w.avif");
+      background-image: url("img/mask_letter_w.avif");
     }
+
     &.warhol--letter__2 {
-      background-image: url("../images/mask_letter_a.avif");
+      background-image: url("img/mask_letter_a.avif");
     }
+
     &.warhol--letter__3 {
-      background-image: url("../images/mask_letter_r.avif");
+      background-image: url("img/mask_letter_r.avif");
     }
+
     &.warhol--letter__4 {
-      background-image: url("../images/mask_letter_h.avif");
+      background-image: url("img/mask_letter_h.avif");
     }
+
     &.warhol--letter__5 {
-      background-image: url("../images/mask_letter_o.avif");
+      background-image: url("img/mask_letter_o.avif");
     }
+
     &.warhol--letter__6 {
-      background-image: url("../images/mask_letter_l.avif");
+      background-image: url("img/mask_letter_l.avif");
     }
   }
 }
@@ -158,6 +159,7 @@ h1 {
   0% {
     transform: scaleX(1);
   }
+
   100% {
     transform: scaleX(-1);
   }
@@ -172,30 +174,39 @@ h1 {
   0% {
     transform: rotate(-8deg);
   }
+
   10% {
     transform: rotate(30deg);
   }
+
   20% {
     transform: rotate(-8deg);
   }
+
   25% {
     transform: rotate(30deg);
   }
+
   30% {
     transform: rotate(-8deg);
   }
+
   34% {
     transform: rotate(30deg);
   }
+
   37% {
     transform: rotate(-8deg);
   }
+
   40% {
     transform: rotate(30deg);
   }
+
   43% {
     transform: rotate(-8deg);
   }
+
   100% {
     transform: rotate(-8deg);
   }
@@ -213,18 +224,21 @@ h1 {
     translate: 0%;
     opacity: 1;
   }
+
   100% {
     scale: 0.8;
     translate: -30%;
     opacity: 0;
   }
 }
+
 @keyframes right-fade {
   0% {
     scale: 1;
     translate: 0%;
     opacity: 1;
   }
+
   100% {
     scale: 0.8;
     translate: 30% 0;
@@ -253,6 +267,7 @@ h1 {
         left: 0;
         animation: infinite 3s linear left-fade;
       }
+
       &:nth-child(even) {
         right: 0;
         animation: infinite 3s linear right-fade;
@@ -261,9 +276,11 @@ h1 {
       &:is(:nth-child(3), :nth-child(4)) {
         animation-delay: 750ms;
       }
+
       &:is(:nth-child(5), :nth-child(6)) {
         animation-delay: 1.5s;
       }
+
       &:is(:nth-child(7), :nth-child(8)) {
         animation-delay: 2.25s;
       }
@@ -307,16 +324,85 @@ blockquote {
 /* Section V */
 @keyframes scroll {
   to {
-    transform: translateY(calc(-50% - 5vw));
+    transform: translate(calc(-50% - 1vw));
   }
 }
-.images-wrapper {
-  animation: scroll 10s linear infinite;
 
-  img {
-    height: 50vw;
-    width: auto;
-    object-fit: contain;
+section#section-5 {
+  --mask: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 20% 80%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: inherit;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+
+  &::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    inset: 0;
+    height: 100%;
+    width: 30%;
+    z-index: 10;
+    background-color: inherit;
+    mix-blend-mode: color;
+  }
+
+  .lines {
+    --lines-color: var(--color-primary);
+    --lines-width: 1px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    inset: 0;
+    height: 100%;
+    pointer-events: none;
+    mix-blend-mode: lighten;
+    border-top: solid var(--lines-width) var(--lines-color);
+    border-bottom: solid var(--lines-width) var(--lines-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 30%;
+      width: 4px;
+      height: 100%;
+      background-color: var(--lines-color);
+      z-index: 10;
+      mix-blend-mode: color;
+    }
+  }
+
+  .images-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: max-content;
+    min-width: max-content;
+    max-width: max-content;
+    gap: 2vw;
+    background-color: inherit;
+    will-change: transform;
+    animation: scroll 15s linear infinite reverse;
+
+    img {
+      height: 20vw;
+      width: auto;
+      flex-grow: 1;
+      object-fit: contain;
+    }
   }
 }
 
@@ -356,6 +442,4 @@ blockquote {
     96% 25.28%,
     100% 35.04%
   );
-}
-footer {
 }

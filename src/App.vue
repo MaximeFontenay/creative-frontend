@@ -2,11 +2,11 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis';
-import { ref } from 'vue';
 import Section1 from './components/Section1.vue';
 import Section2 from './components/Section2.vue';
 import Section3 from './components/Section3.vue';
-import { default as Section4, default as Section5 } from './components/Section4.vue';
+import Section4 from './components/Section4.vue';
+import Section5 from './components/Section5.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,15 +24,10 @@ const raf = (time: number) => {
 }
 requestAnimationFrame(raf);
 
-
-// DOM 
-const app = ref<HTMLElement | null>(null);
-
-
 </script>
 
 <template>
-  <div ref="app" class="ease duration-700 bg-dark text-light font-mango">
+  <div ref="app" id="appInner" class="ease duration-700 bg-dark text-light font-mango">
     <header class="hidden xl:flex justify-between items-stretch gap-6 px-10 pt-10 font-sans">
       <p>INDEX<br>4 ELVIS</p>
       <p>Art<br>Tour</p>
@@ -50,21 +45,15 @@ const app = ref<HTMLElement | null>(null);
       </ul>
     </header>
 
-    <!-- Section I -->
     <Section1 />
 
-    <!-- Section II -->
     <Section2 />
 
-    <!-- Section III -->
     <Section3 />
 
-    <!-- Section IV -->
     <Section4 />
 
-    <!-- Section V -->
     <Section5 />
-
 
     <div class="footer-divider"></div>
     <footer class="flex flex-col bg-primary text-light h-[55vh] relative font-league text-2xs font-medium">

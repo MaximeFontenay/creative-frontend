@@ -54,6 +54,7 @@
   font-display: swap;
   src: url("../fonts/mango/MangoGrotesque-Bold.woff2") format("woff2");
 }
+
 @font-face {
   font-family: Mango;
   font-style: normal;
